@@ -25,21 +25,17 @@ def is_transitive(R):
         for j in range(len(R)):
             if R[i][j] == 1:
                 lst.append([i, j])
-
     stack = []
     for i in range(len(lst)):
         for j in range(len(lst)):
             if lst[i][1] == lst[j][0]:
                 arr = [lst[i][0], lst[j][1]]
-                print(lst[i], lst[j], "/", arr)
                 if arr in lst and lst[i] not in stack:
                     stack.append(lst[i])
                 else:
                     pass
             else:
                 pass
-    print(stack)
-    print(lst)
     if stack == lst:
         return True
     else:
